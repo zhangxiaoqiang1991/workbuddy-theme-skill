@@ -1,0 +1,15 @@
+{
+  "name": "workbuddy-theme-skill",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "用 AI 生成、应用和恢复腾讯 WorkBuddy 定制皮肤。",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "pack": "node scripts/workbuddy-theme.mjs pack all",
+    "inspect": "node scripts/workbuddy-theme.mjs inspect all"
+  },
+  "engines": {
+    "node": ">=22.4"
+  }
+}

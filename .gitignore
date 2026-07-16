@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+*.log
+screenshots/*.png
+screenshots/*.jpg
+screenshots/*.jpeg
+screenshots/*.webp

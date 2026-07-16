@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="720" viewBox="0 0 1440 720" role="img" aria-labelledby="title desc">
+  <title id="title">WorkBuddy Theme Skill 配色预览</title>
+  <desc id="desc">Focus Night、Warm Paper 和 Cyber Lobster 三套主题的抽象界面配色预览。</desc>
+  <rect width="1440" height="720" fill="#eceff4"/>
+  <text x="72" y="86" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="42" font-weight="700" fill="#172033">WorkBuddy Theme Skill</text>
+  <text x="72" y="126" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" fill="#657086">三套内置主题配色预览</text>
+
+  <g transform="translate(72 176)">
+    <rect width="400" height="450" rx="28" fill="#090d13"/>
+    <rect x="20" y="20" width="104" height="410" rx="18" fill="#111823"/>
+    <rect x="144" y="48" width="230" height="280" rx="22" fill="#151d29" stroke="#67e8f9" stroke-opacity=".35"/>
+    <rect x="164" y="268" width="190" height="42" rx="12" fill="#0f1722" stroke="#67e8f9" stroke-opacity=".5"/>
+    <circle cx="346" cy="78" r="9" fill="#67e8f9"/>
+    <text x="144" y="374" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="26" font-weight="700" fill="#edf4ff">Focus Night</text>
+    <text x="144" y="406" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" fill="#93a4bb">低干扰深色专注</text>
+  </g>
+
+  <g transform="translate(520 176)">
+    <rect width="400" height="450" rx="28" fill="#f4efe4"/>
+    <rect x="20" y="20" width="104" height="410" rx="18" fill="#fffaf0"/>
+    <rect x="144" y="48" width="230" height="280" rx="22" fill="#fffdf7" stroke="#b95f3d" stroke-opacity=".3"/>
+    <rect x="164" y="268" width="190" height="42" rx="12" fill="#fffdf7" stroke="#b95f3d" stroke-opacity=".45"/>
+    <circle cx="346" cy="78" r="9" fill="#b95f3d"/>
+    <text x="144" y="374" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="26" font-weight="700" fill="#332b23">Warm Paper</text>
+    <text x="144" y="406" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" fill="#827363">暖纸张与墨色</text>
+  </g>
+
+  <g transform="translate(968 176)">
+    <defs>
+      <linearGradient id="cyber" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0" stop-color="#07111f"/>
+        <stop offset=".55" stop-color="#0a1a2c"/>
+        <stop offset="1" stop-color="#10253a"/>
+      </linearGradient>
+    </defs>
+    <rect width="400" height="450" rx="28" fill="url(#cyber)"/>
+    <circle cx="326" cy="74" r="88" fill="#ff6b5f" opacity=".13"/>
+    <circle cx="80" cy="352" r="110" fill="#2dd4bf" opacity=".1"/>
+    <rect x="20" y="20" width="104" height="410" rx="18" fill="#081626" fill-opacity=".92"/>
+    <rect x="144" y="48" width="230" height="280" rx="22" fill="#0d2034" stroke="#2dd4bf" stroke-opacity=".45"/>
+    <rect x="164" y="268" width="190" height="42" rx="12" fill="#08192a" stroke="#ff6b5f" stroke-opacity=".6"/>
+    <circle cx="346" cy="78" r="9" fill="#ff6b5f"/>
+    <text x="144" y="374" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="26" font-weight="700" fill="#eefcff">Cyber Lobster</text>
+    <text x="144" y="406" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" fill="#92b6c1">珊瑚红与赛博青</text>
+  </g>
+</svg>

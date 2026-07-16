@@ -1,0 +1,42 @@
+{
+  "format": "codedrobe-theme",
+  "schemaVersion": 1,
+  "exportedAt": "2026-07-16T11:17:23.213Z",
+  "theme": {
+    "id": "focus-night",
+    "displayName": "Focus Night",
+    "version": "1.0.0"
+  },
+  "targets": {
+    "workbuddy": {
+      "css": "html.codedrobe-host-workbuddy {\n  --wbts-bg: #090d13;\n  --wbts-panel: rgba(17, 24, 35, 0.92);\n  --wbts-panel-strong: #151d29;\n  --wbts-border: rgba(132, 160, 193, 0.22);\n  --wbts-text: #edf4ff;\n  --wbts-muted: #93a4bb;\n  --wbts-accent: #67e8f9;\n  --wbts-accent-soft: rgba(103, 232, 249, 0.14);\n  color-scheme: dark;\n}\n\nhtml.codedrobe-host-workbuddy body,\nhtml.codedrobe-host-workbuddy .teams-container {\n  background: var(--wbts-bg) !important;\n  color: var(--wbts-text) !important;\n}\n\nhtml.codedrobe-host-workbuddy .teams-main-content,\nhtml.codedrobe-host-workbuddy .main-content,\nhtml.codedrobe-host-workbuddy .chat-container {\n  background-color: var(--wbts-bg) !important;\n  background-image:\n    radial-gradient(circle at 82% 12%, rgba(14, 116, 144, 0.19), transparent 32%),\n    radial-gradient(circle at 42% 88%, rgba(37, 99, 235, 0.13), transparent 36%) !important;\n  color: var(--wbts-text) !important;\n}\n\nhtml.codedrobe-host-workbuddy .conversation-sidebar,\nhtml.codedrobe-host-workbuddy .conversation-list {\n  background: var(--wbts-panel) !important;\n  border-color: var(--wbts-border) !important;\n  color: var(--wbts-text) !important;\n  backdrop-filter: blur(18px) saturate(125%);\n}\n\nhtml.codedrobe-host-workbuddy .workbuddy-topbar,\nhtml.codedrobe-host-workbuddy .wb-home-page {\n  background: var(--wbts-panel) !important;\n  border-color: var(--wbts-border) !important;\n  color: var(--wbts-text) !important;\n  backdrop-filter: blur(18px) saturate(125%);\n}\n\nhtml.codedrobe-host-workbuddy .conversation-list :where(*),\nhtml.codedrobe-host-workbuddy .workbuddy-topbar :where(*),\nhtml.codedrobe-host-workbuddy .wb-home-page :where(*) {\n  border-color: var(--wbts-border) !important;\n  color: inherit !important;\n}\n\nhtml.codedrobe-host-workbuddy :is(.conversation-list-header, .conversation-list-content, .conversation-list-footer) :where(*) {\n  color: var(--wbts-text) !important;\n}\n\nhtml.codedrobe-host-workbuddy .conversation-list .conversation-agent-card span {\n  color: var(--wbts-text) !important;\n  -webkit-text-fill-color: var(--wbts-text) !important;\n}\n\nhtml.codedrobe-host-workbuddy .conversation-section-label :where(*) {\n  color: var(--wbts-muted) !important;\n}\n\nhtml.codedrobe-host-workbuddy :is(.wb-home-page, .wb-home-composer, .workbuddy-topbar) :is(button, [role=\"button\"]) {\n  background-color: var(--wbts-panel-strong) !important;\n}\n\nhtml.codedrobe-host-workbuddy .wb-input-footer,\nhtml.codedrobe-host-workbuddy .wb-input-footer :where(*) {\n  background-color: var(--wbts-panel-strong) !important;\n  border-color: var(--wbts-border) !important;\n  color: var(--wbts-text) !important;\n}\n\nhtml.codedrobe-host-workbuddy .wb-home-composer :has([role=\"textbox\"][contenteditable=\"true\"]) {\n  background-color: var(--wbts-panel-strong) !important;\n  border-color: var(--wbts-border) !important;\n  color: var(--wbts-text) !important;\n}\n\nhtml.codedrobe-host-workbuddy :is(.wb-home-composer, [role=\"textbox\"][contenteditable=\"true\"], input, textarea) {\n  background: rgba(15, 23, 34, 0.88) !important;\n  border-color: var(--wbts-border) !important;\n  color: var(--wbts-text) !important;\n  caret-color: var(--wbts-accent) !important;\n  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.26);\n}\n\nhtml.codedrobe-host-workbuddy button,\nhtml.codedrobe-host-workbuddy [role=\"button\"] {\n  border-color: var(--wbts-border);\n  color: var(--wbts-text);\n}\n\nhtml.codedrobe-host-workbuddy button:hover,\nhtml.codedrobe-host-workbuddy [role=\"button\"]:hover {\n  background-color: var(--wbts-accent-soft);\n}\n\nhtml.codedrobe-host-workbuddy [aria-selected=\"true\"],\nhtml.codedrobe-host-workbuddy [data-state=\"active\"] {\n  background-color: var(--wbts-accent-soft) !important;\n  color: var(--wbts-accent) !important;\n}\n\nhtml.codedrobe-host-workbuddy ::placeholder {\n  color: var(--wbts-muted) !important;\n}\n\nhtml.codedrobe-host-workbuddy * {\n  scrollbar-color: rgba(103, 232, 249, 0.35) transparent;\n}\n",
+      "verification": {
+        "required": [
+          {
+            "name": "workbuddy-shell",
+            "any": [
+              ".teams-container",
+              "#root"
+            ]
+          }
+        ],
+        "recommended": [
+          {
+            "name": "conversation-list",
+            "any": [
+              ".conversation-list",
+              ".conversation-sidebar"
+            ]
+          },
+          {
+            "name": "home-composer",
+            "any": [
+              ".wb-home-composer",
+              "[role='textbox'][contenteditable='true']"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
