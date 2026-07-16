@@ -1,8 +1,7 @@
 ---
 name: workbuddy-skin-skill
 description: |
-  在腾讯 WorkBuddy 内生成、应用、验证、导出和恢复可逆的定制 Skin。当用户提到 WorkBuddy Skin、皮肤、美化、暗色模式、界面配色、上传图片换肤、明星图片定制、二次元风格、联网搜索灵感或恢复原生界面时使用。
-agent_created: true
+  在腾讯 WorkBuddy 内生成、应用、验证、导出和恢复可逆的定制 Skin。当用户提到 WorkBuddy Skin、皮肤、美化、暗色模式、界面配色、上传图片换肤、明星图片或明星风格定制、二次元风格、联网搜索灵感或恢复原生界面时使用。
 ---
 
 # WorkBuddy Skin Skill
@@ -53,7 +52,7 @@ node scripts/workbuddy-skin.mjs scaffold <new-id> \
   --art "/absolute/path/to/uploaded-image.jpg"
 ```
 
-5. 如果用户只要风格、不要照片背景，省略 `--art`。编辑 `local-themes/<id>/workbuddy.css`，使用 `var(--codedrobe-art)` 引用包内图片，叠加蒙版保证文字可读。
+5. 用户在本地要求“某明星风格”且提供了有权使用的图片时，必须把同一张大头像同时用于 `.wb-home-page` 主页和 `.chat-container` 聊天背景，并生成与图片一致的灯光、材质和配色氛围；不要只换按钮颜色。只有用户明确说“不要照片”时才省略 `--art`。
 6. 将真人照片和私人定制包留在已被 Git 忽略的 `local-themes/` 和 `local-dist/`。用户要求公开分享时，先确认素材权利；无法确认时只发布原创配色版。
 
 ## 5. 打包、检查与验证
@@ -65,7 +64,7 @@ node scripts/workbuddy-skin.mjs apply <id>
 node scripts/workbuddy-skin.mjs verify <id> --screenshot /absolute/workbuddy-skin.png
 ```
 
-检查侧边栏、主工作区、输入框、任务页和产物页。将必要 DOM 地标缺失、文字难读、主体被遮挡或横向溢出视为失败。静态打包成功不等于视觉验证成功。
+分别在主页和聊天页截图验证；明星大头像必须在两处都清晰可见且不遮挡正文、输入框和导航。再检查侧边栏、任务页和产物页。将必要 DOM 地标缺失、文字难读、主体被遮挡或横向溢出视为失败。静态打包成功不等于视觉验证成功。
 
 ## 6. 恢复
 

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "magical-night",
   "displayName": "Magical Night",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "targets": {
     "workbuddy": {
       "css": "workbuddy.css",

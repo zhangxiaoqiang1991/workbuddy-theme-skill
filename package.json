@@ -1,6 +1,6 @@
 {
   "name": "workbuddy-skin-skill",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "type": "module",
   "description": "在 WorkBuddy 中生成、应用和恢复定制 Skin。",

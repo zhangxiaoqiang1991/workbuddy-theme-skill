@@ -21,6 +21,41 @@ const EXPECTED_THEME_IDS = [
   "warm-paper",
 ];
 
+const DARK_THEME_IDS = new Set([
+  "cyber-lobster",
+  "focus-night",
+  "magical-night",
+  "mecha-core",
+  "rose-glam",
+  "stage-aurora",
+]);
+
+function hexToRgb(hex) {
+  const value = Number.parseInt(hex.slice(1), 16);
+  return [(value >> 16) & 255, (value >> 8) & 255, value & 255];
+}
+
+function luminance(hex) {
+  const channels = hexToRgb(hex).map((channel) => {
+    const normalized = channel / 255;
+    return normalized <= 0.04045
+      ? normalized / 12.92
+      : ((normalized + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
+}
+
+function contrastRatio(a, b) {
+  const [lighter, darker] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+function cssHexVariable(css, name) {
+  const match = css.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6})`, "i"));
+  assert.ok(match, `missing --${name}`);
+  return match[1];
+}
+
 function themeDirectories() {
   return fs.readdirSync(THEMES_DIR, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
@@ -47,6 +82,21 @@ for (const directory of themeDirectories()) {
     assert.doesNotMatch(css, /@import\s/i);
     assert.doesNotMatch(css, /url\s*\(/i);
     assert.doesNotMatch(css, /javascript:/i);
+
+    const background = cssHexVariable(css, "wbts-bg");
+    const text = cssHexVariable(css, "wbts-text");
+    const muted = cssHexVariable(css, "wbts-muted");
+    assert.ok(contrastRatio(text, background) >= 7, `${directory}: primary text must reach WCAG AAA`);
+    assert.ok(contrastRatio(muted, background) >= 4.5, `${directory}: muted text must reach WCAG AA`);
+
+    if (DARK_THEME_IDS.has(directory)) {
+      const panel = cssHexVariable(css, "wbts-panel-strong");
+      assert.ok(contrastRatio(text, panel) >= 4.5, `${directory}: task surfaces must reach WCAG AA`);
+      assert.match(css, /\.main-content--chat \.cb-assistant-message/);
+      assert.match(css, /\.cb-markdown-table-wrapper/);
+      assert.match(css, /\.artifact-slot-panel__card/);
+      assert.match(css, /:has\(> :has\(> \[role="textbox"\]/);
+    }
   });
 }
 

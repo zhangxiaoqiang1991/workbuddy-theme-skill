@@ -59,19 +59,20 @@ node scripts/workbuddy-skin.mjs scaffold <new-id> \
   --art "/absolute/path/to/uploaded-image.jpg"
 ```
 
-不需要将照片放入 Skin 时省略 `--art`。需要使用照片时，在工作区背景中叠加深浅蒙版，保证文字可读：
+只有用户明确要求“不使用照片”时才省略 `--art`。用户说“某明星风格”并提供有权使用的本地图片时，大头像必须同时出现在主页和聊天背景，而不是只做配色：
 
 ```css
-html.codedrobe-host-workbuddy .teams-main-content {
+html.codedrobe-host-workbuddy :is(.wb-home-page, .chat-container) {
   background-image:
-    linear-gradient(rgba(10, 12, 22, 0.52), rgba(10, 12, 22, 0.74)),
+    linear-gradient(90deg, rgba(10, 12, 22, 0.94) 0%, rgba(10, 12, 22, 0.72) 52%, rgba(10, 12, 22, 0.28) 100%),
     var(--codedrobe-art) !important;
-  background-position: center !important;
-  background-size: cover !important;
+  background-position: center, right 4% center !important;
+  background-size: cover, auto 96% !important;
+  background-repeat: no-repeat !important;
 }
 ```
 
-根据构图调整 `background-position`，避免主体被输入框或面板遮挡。不用整张截图覆盖功能 UI。
+根据人脸位置把头像放在左侧或右侧留白区，并从图片提取色彩、灯光、材质，统一到面板、按钮和强调色。蒙版必须让正文达到 AA 对比度。不要用整张截图覆盖功能 UI。
 
 ## 6. 验证
 
@@ -82,4 +83,4 @@ node scripts/workbuddy-skin.mjs apply <new-id>
 node scripts/workbuddy-skin.mjs verify <new-id> --screenshot /absolute/skin.png
 ```
 
-检查主体位置、人脸是否被输入框遮挡、文字对比度、功能入口和横向溢出。验证失败或用户不要保留时执行 `restore`。
+先在主页截图，再进入聊天页截图。两张图都必须看到大头像和对应氛围；检查人脸是否被正文或输入框遮挡、文字对比度、功能入口和横向溢出。任一场景失败就继续调整，用户不要保留时执行 `restore`。

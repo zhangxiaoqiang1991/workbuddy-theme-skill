@@ -137,3 +137,44 @@ html.codedrobe-host-workbuddy ::placeholder {
 html.codedrobe-host-workbuddy * {
   scrollbar-color: rgba(45, 212, 191, 0.4) transparent;
 }
+
+/* Task-page contrast layer: every foreground is paired with its own surface. */
+html.codedrobe-host-workbuddy .main-content--chat .cb-assistant-message,
+html.codedrobe-host-workbuddy .main-content--chat .cb-assistant-message :where(*) {
+  border-color: var(--wbts-border) !important;
+  color: var(--wbts-text) !important;
+  -webkit-text-fill-color: var(--wbts-text) !important;
+}
+
+html.codedrobe-host-workbuddy .main-content--chat :is(.cb-markdown-table-wrapper, .artifact-slot-panel__card),
+html.codedrobe-host-workbuddy .main-content--chat :is(.cb-markdown-table-wrapper, .artifact-slot-panel__card) :where(*),
+html.codedrobe-host-workbuddy .main-content--chat .cb-markdown :is(table, thead, tbody, tr, th, td, pre, code) {
+  background-color: var(--wbts-panel-strong) !important;
+  border-color: var(--wbts-border) !important;
+  color: var(--wbts-text) !important;
+  -webkit-text-fill-color: var(--wbts-text) !important;
+}
+
+html.codedrobe-host-workbuddy .main-content--chat .cb-message-time-tip {
+  color: var(--wbts-muted) !important;
+  -webkit-text-fill-color: var(--wbts-muted) !important;
+}
+
+html.codedrobe-host-workbuddy .main-content--chat :has(> :has(> [role="textbox"][contenteditable="true"])),
+html.codedrobe-host-workbuddy .main-content--chat :has(> :has(> [role="textbox"][contenteditable="true"])) :where(*) {
+  background-color: var(--wbts-panel-strong) !important;
+  border-color: var(--wbts-border) !important;
+  color: var(--wbts-text) !important;
+  -webkit-text-fill-color: var(--wbts-text) !important;
+}
+
+html.codedrobe-host-workbuddy .conversation-list :is(button, [role="button"], .conversation-agent-card) {
+  background-color: transparent !important;
+  color: var(--wbts-text) !important;
+}
+
+html.codedrobe-host-workbuddy .conversation-list :is(button, [role="button"], .conversation-agent-card):hover,
+html.codedrobe-host-workbuddy .conversation-list :is([aria-selected="true"], [aria-current="page"], [data-state="active"]) {
+  background-color: var(--wbts-accent-soft) !important;
+  color: var(--wbts-accent) !important;
+}
