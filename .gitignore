@@ -1,5 +1,7 @@
 .DS_Store
+.agents/
 node_modules/
+skills-lock.json
 *.log
 screenshots/*.png
 screenshots/*.jpg
