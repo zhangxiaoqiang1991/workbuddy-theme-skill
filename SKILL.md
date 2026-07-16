@@ -118,25 +118,15 @@ node scripts/workbuddy-theme.mjs verify focus-night --screenshot /absolute/focus
 
 先读取 `references/theme-contract.md`，从现有主题复制并调整配色，打包、应用、截图验证，再根据截图迭代。
 
+## 致谢与原创边界
+
+保留并说明上游来源：底层 CDP 注入机制、WorkBuddy 适配器和 `.codedrobe-theme` 格式来自 [CodeDrobe Core](https://github.com/CodeDrobe/core)，原作者为 [Alone88（@anhao）](https://github.com/anhao)，上游使用 Apache-2.0 协议。
+
+将本仓库描述为 CodeDrobe 的 WorkBuddy 场景扩展，不宣称重新发明其运行时。对外发布定制主题或衍生版本时，继续保留上游作者、仓库和许可证信息。将本仓库新增内容限定为 WorkBuddy 专用 Skill、三套主题、入口脚本、中文文档和实机验证流程。
+
 ## 反馈 & 帮助迭代
 
 欢迎在 [Issues](https://github.com/zhangxiaoqiang1991/workbuddy-theme-skill/issues) 页面提交反馈，或直接联系作者。
-
-## 关于我
-
-**大厂转型人强哥**（全网同名）
-
-河北邯郸人，曾武汉求学，现居北京。曾就职腾讯、字节跳动。目前负责 AI + 内容增长、产品运营。关注以下三方面的机会，欢迎交流 / 围观朋友圈：
-
-- **AI 内容运营**：从战略、策略到执行的内容增长
-- **AI 培训 / 布道**：帮团队真正用好 AI，不只是上个课
-- **AI 内部提效**：搭建工具流，把 AI 落地到业务流程里
-
-**联系方式与链接：**
-
-- 微信：`qianggegood123`（有对应付费社群和咨询服务，若感兴趣私聊即可）
-- 小红书：[强哥 @andyxqzhang](https://www.xiaohongshu.com/user/profile/617395d8000000001f0362a3)
-- Twitter：[@andyxqzhang001](https://x.com/andyxqzhang001)
 
 ---
 

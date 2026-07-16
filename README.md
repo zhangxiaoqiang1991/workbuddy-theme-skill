@@ -2,6 +2,8 @@
 
 用 Codex 一句话，为腾讯 WorkBuddy 生成、应用和恢复定制皮肤。
 
+> 上游说明：本项目是 [CodeDrobe Core](https://github.com/CodeDrobe/core) 的 WorkBuddy 场景扩展。感谢原作者 [Alone88（@anhao）](https://github.com/anhao) 开源底层运行时与适配器。详细原创边界与新增内容见文末“致谢与原创说明”。
+
 ![三套内置主题配色预览](screenshots/theme-preview.svg)
 
 ## ① 安装方式
@@ -112,6 +114,21 @@ npm run inspect
 ## 开源协议
 
 本项目使用 [MIT License](LICENSE)。底层依赖 CodeDrobe Core，遵循其 Apache-2.0 许可，详见 [NOTICE](NOTICE)。
+
+## 致谢与原创说明
+
+这个项目不是从零发明 WorkBuddy 换肤底层，也不把上游能力改名后当成自己的原创。
+
+特别感谢 [CodeDrobe](https://github.com/CodeDrobe) 项目及原作者 [Alone88（@anhao）](https://github.com/anhao)。本项目使用的 CDP 注入机制、跨应用运行时、WorkBuddy 适配器和 `.codedrobe-theme` 主题包规范，来自其开源项目 [CodeDrobe Core](https://github.com/CodeDrobe/core)，上游采用 Apache-2.0 协议。
+
+本仓库在上游能力之上新增了：
+
+- 面向 Codex 等 Agent 的 WorkBuddy 专用 Skill 工作流。
+- `focus-night`、`warm-paper`、`cyber-lobster` 三套主题设计与 CSS。
+- 主题打包、应用、验证、截图和恢复的统一入口脚本。
+- WorkBuddy 5.2.6 macOS 实机适配、视觉迭代和中文使用文档。
+
+本项目与 CodeDrobe 是“上游运行时 + WorkBuddy 场景扩展”的关系。二次发布或改造时，请继续保留 CodeDrobe、Alone88、上游仓库和 Apache-2.0 协议信息。
 
 ## 反馈 & 帮助迭代
 

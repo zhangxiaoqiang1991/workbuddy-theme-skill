@@ -2,8 +2,16 @@ WorkBuddy Theme Skill calls CodeDrobe Core as an external runtime dependency.
 
 CodeDrobe Core
 Copyright (c) CodeDrobe contributors
+Original author and maintainer: Alone88 (@anhao)
 License: Apache License 2.0
 Source: https://github.com/CodeDrobe/core
+Author: https://github.com/anhao
+
+This repository does not claim authorship of the CodeDrobe CDP runtime,
+WorkBuddy adapter, CLI, or .codedrobe-theme package format. It uses CodeDrobe
+Core as an external dependency and adds a WorkBuddy-focused Agent Skill, three
+theme designs, a wrapper script, Chinese documentation, and live verification
+workflows.
 
 Tencent WorkBuddy is a product and trademark of its respective owner. This
 project is an independent open-source customization tool and is not affiliated
