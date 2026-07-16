@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "mecha-core",
+  "displayName": "Mecha Core",
+  "version": "1.0.0",
+  "targets": {
+    "workbuddy": {
+      "css": "workbuddy.css",
+      "verification": {
+        "required": [
+          { "name": "workbuddy-shell", "any": [".teams-container", "#root"] }
+        ],
+        "recommended": [
+          { "name": "conversation-list", "any": [".conversation-list", ".conversation-sidebar"] },
+          { "name": "home-composer", "any": [".wb-home-composer", "[role='textbox'][contenteditable='true']"] }
+        ]
+      }
+    }
+  }
+}

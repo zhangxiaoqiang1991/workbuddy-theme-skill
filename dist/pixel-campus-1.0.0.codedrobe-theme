@@ -1,0 +1,42 @@
+{
+  "format": "codedrobe-theme",
+  "schemaVersion": 1,
+  "exportedAt": "2026-07-16T11:48:44.742Z",
+  "theme": {
+    "id": "pixel-campus",
+    "displayName": "Pixel Campus",
+    "version": "1.0.0"
+  },
+  "targets": {
+    "workbuddy": {
+      "css": "html.codedrobe-host-workbuddy {\n  --wbts-bg: #eaf8ff;\n  --wbts-panel: rgba(248, 253, 255, 0.92);\n  --wbts-panel-strong: #f7fcff;\n  --wbts-border: rgba(35, 122, 170, 0.22);\n  --wbts-text: #17344a;\n  --wbts-muted: #66889e;\n  --wbts-accent: #268bd2;\n  --wbts-accent-two: #f3b61f;\n  --wbts-accent-soft: rgba(38, 139, 210, 0.12);\n  color-scheme: light;\n}\n\nhtml.codedrobe-host-workbuddy body,\nhtml.codedrobe-host-workbuddy .teams-container {\n  background: var(--wbts-bg) !important;\n  color: var(--wbts-text) !important;\n}\n\nhtml.codedrobe-host-workbuddy :is(.teams-main-content, .main-content, .chat-container) {\n  background-color: var(--wbts-bg) !important;\n  background-image:\n    linear-gradient(rgba(38, 139, 210, 0.06) 2px, transparent 2px),\n    linear-gradient(90deg, rgba(38, 139, 210, 0.06) 2px, transparent 2px),\n    radial-gradient(circle at 82% 18%, rgba(243, 182, 31, 0.2), transparent 30%) !important;\n  background-size: 24px 24px, 24px 24px, auto !important;\n  color: var(--wbts-text) !important;\n}\n\nhtml.codedrobe-host-workbuddy :is(.conversation-sidebar, .conversation-list, .workbuddy-topbar, .wb-home-page) {\n  background: var(--wbts-panel) !important;\n  border-color: var(--wbts-border) !important;\n  color: var(--wbts-text) !important;\n  backdrop-filter: blur(14px) saturate(108%);\n}\n\nhtml.codedrobe-host-workbuddy :is(.conversation-list, .workbuddy-topbar, .wb-home-page) :where(*) {\n  border-color: var(--wbts-border) !important;\n  color: inherit !important;\n}\n\nhtml.codedrobe-host-workbuddy :is(.conversation-list-header, .conversation-list-content, .conversation-list-footer) :where(*) {\n  color: var(--wbts-text) !important;\n}\n\nhtml.codedrobe-host-workbuddy .conversation-list .conversation-agent-card span {\n  color: var(--wbts-text) !important;\n  -webkit-text-fill-color: var(--wbts-text) !important;\n}\n\nhtml.codedrobe-host-workbuddy .conversation-section-label :where(*) {\n  color: var(--wbts-muted) !important;\n}\n\nhtml.codedrobe-host-workbuddy :is(.wb-home-page, .wb-home-composer, .workbuddy-topbar) :is(button, [role=\"button\"]) {\n  background-color: var(--wbts-panel-strong) !important;\n}\n\nhtml.codedrobe-host-workbuddy :is(.wb-input-footer, .wb-input-footer :where(*)) {\n  background-color: var(--wbts-panel-strong) !important;\n  border-color: var(--wbts-border) !important;\n  color: var(--wbts-text) !important;\n}\n\nhtml.codedrobe-host-workbuddy .wb-home-composer :has([role=\"textbox\"][contenteditable=\"true\"]) {\n  background-color: var(--wbts-panel-strong) !important;\n  border-color: var(--wbts-border) !important;\n  color: var(--wbts-text) !important;\n}\n\nhtml.codedrobe-host-workbuddy :is(.wb-home-composer, [role=\"textbox\"][contenteditable=\"true\"], input, textarea) {\n  background: rgba(248, 253, 255, 0.96) !important;\n  border-color: var(--wbts-border) !important;\n  color: var(--wbts-text) !important;\n  caret-color: var(--wbts-accent) !important;\n  box-shadow: 8px 8px 0 rgba(38, 139, 210, 0.08);\n}\n\nhtml.codedrobe-host-workbuddy :is(button, [role=\"button\"]) {\n  border-color: var(--wbts-border);\n  color: var(--wbts-text);\n}\n\nhtml.codedrobe-host-workbuddy :is(button, [role=\"button\"]):hover {\n  background-color: var(--wbts-accent-soft) !important;\n}\n\nhtml.codedrobe-host-workbuddy :is([aria-selected=\"true\"], [data-state=\"active\"]) {\n  background: linear-gradient(90deg, rgba(38, 139, 210, 0.17), rgba(243, 182, 31, 0.16)) !important;\n  color: var(--wbts-accent) !important;\n}\n\nhtml.codedrobe-host-workbuddy ::placeholder {\n  color: var(--wbts-muted) !important;\n}\n\nhtml.codedrobe-host-workbuddy * {\n  scrollbar-color: rgba(38, 139, 210, 0.34) transparent;\n}\n",
+      "verification": {
+        "required": [
+          {
+            "name": "workbuddy-shell",
+            "any": [
+              ".teams-container",
+              "#root"
+            ]
+          }
+        ],
+        "recommended": [
+          {
+            "name": "conversation-list",
+            "any": [
+              ".conversation-list",
+              ".conversation-sidebar"
+            ]
+          },
+          {
+            "name": "home-composer",
+            "any": [
+              ".wb-home-composer",
+              "[role='textbox'][contenteditable='true']"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

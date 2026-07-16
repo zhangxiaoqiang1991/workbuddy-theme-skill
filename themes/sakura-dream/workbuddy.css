@@ -1,0 +1,98 @@
+html.codedrobe-host-workbuddy {
+  --wbts-bg: #fff1f6;
+  --wbts-panel: rgba(255, 250, 253, 0.9);
+  --wbts-panel-strong: #fff7fb;
+  --wbts-border: rgba(215, 113, 157, 0.2);
+  --wbts-text: #4b3040;
+  --wbts-muted: #9b7186;
+  --wbts-accent: #e66fa5;
+  --wbts-accent-two: #a783df;
+  --wbts-accent-soft: rgba(230, 111, 165, 0.13);
+  color-scheme: light;
+}
+
+html.codedrobe-host-workbuddy body,
+html.codedrobe-host-workbuddy .teams-container {
+  background: var(--wbts-bg) !important;
+  color: var(--wbts-text) !important;
+}
+
+html.codedrobe-host-workbuddy :is(.teams-main-content, .main-content, .chat-container) {
+  background-color: var(--wbts-bg) !important;
+  background-image:
+    radial-gradient(circle at 80% 18%, rgba(255, 172, 205, 0.38), transparent 33%),
+    radial-gradient(circle at 34% 80%, rgba(197, 172, 244, 0.32), transparent 38%),
+    linear-gradient(145deg, #fff8fb, #fbeaf4) !important;
+  color: var(--wbts-text) !important;
+}
+
+html.codedrobe-host-workbuddy :is(.conversation-sidebar, .conversation-list, .workbuddy-topbar, .wb-home-page) {
+  background: var(--wbts-panel) !important;
+  border-color: var(--wbts-border) !important;
+  color: var(--wbts-text) !important;
+  backdrop-filter: blur(17px) saturate(112%);
+}
+
+html.codedrobe-host-workbuddy :is(.conversation-list, .workbuddy-topbar, .wb-home-page) :where(*) {
+  border-color: var(--wbts-border) !important;
+  color: inherit !important;
+}
+
+html.codedrobe-host-workbuddy :is(.conversation-list-header, .conversation-list-content, .conversation-list-footer) :where(*) {
+  color: var(--wbts-text) !important;
+}
+
+html.codedrobe-host-workbuddy .conversation-list .conversation-agent-card span {
+  color: var(--wbts-text) !important;
+  -webkit-text-fill-color: var(--wbts-text) !important;
+}
+
+html.codedrobe-host-workbuddy .conversation-section-label :where(*) {
+  color: var(--wbts-muted) !important;
+}
+
+html.codedrobe-host-workbuddy :is(.wb-home-page, .wb-home-composer, .workbuddy-topbar) :is(button, [role="button"]) {
+  background-color: var(--wbts-panel-strong) !important;
+}
+
+html.codedrobe-host-workbuddy :is(.wb-input-footer, .wb-input-footer :where(*)) {
+  background-color: var(--wbts-panel-strong) !important;
+  border-color: var(--wbts-border) !important;
+  color: var(--wbts-text) !important;
+}
+
+html.codedrobe-host-workbuddy .wb-home-composer :has([role="textbox"][contenteditable="true"]) {
+  background-color: var(--wbts-panel-strong) !important;
+  border-color: var(--wbts-border) !important;
+  color: var(--wbts-text) !important;
+}
+
+html.codedrobe-host-workbuddy :is(.wb-home-composer, [role="textbox"][contenteditable="true"], input, textarea) {
+  background: rgba(255, 250, 253, 0.95) !important;
+  border-color: var(--wbts-border) !important;
+  color: var(--wbts-text) !important;
+  caret-color: var(--wbts-accent) !important;
+  box-shadow: 0 18px 54px rgba(143, 75, 108, 0.13);
+}
+
+html.codedrobe-host-workbuddy :is(button, [role="button"]) {
+  border-color: var(--wbts-border);
+  color: var(--wbts-text);
+}
+
+html.codedrobe-host-workbuddy :is(button, [role="button"]):hover {
+  background-color: var(--wbts-accent-soft) !important;
+}
+
+html.codedrobe-host-workbuddy :is([aria-selected="true"], [data-state="active"]) {
+  background: linear-gradient(90deg, rgba(230, 111, 165, 0.18), rgba(167, 131, 223, 0.13)) !important;
+  color: var(--wbts-accent) !important;
+}
+
+html.codedrobe-host-workbuddy ::placeholder {
+  color: var(--wbts-muted) !important;
+}
+
+html.codedrobe-host-workbuddy * {
+  scrollbar-color: rgba(230, 111, 165, 0.36) transparent;
+}

@@ -4,7 +4,7 @@
 
 > 上游说明：本项目是 [CodeDrobe Core](https://github.com/CodeDrobe/core) 的 WorkBuddy 场景扩展。感谢原作者 [Alone88（@anhao）](https://github.com/anhao) 开源底层运行时与适配器。详细原创边界与新增内容见文末“致谢与原创说明”。
 
-![三套内置主题配色预览](screenshots/theme-preview.svg)
+![十套内置主题配色预览](screenshots/theme-preview.svg)
 
 ## ① 安装方式
 
@@ -41,13 +41,20 @@ node scripts/workbuddy-theme.mjs list
 node scripts/workbuddy-theme.mjs apply focus-night
 ```
 
-三套内置主题：
+十套内置主题：
 
-| 主题 | 风格 | 适合场景 |
-|---|---|---|
-| `focus-night` | 深色、青蓝、低干扰 | 长时间专注工作 |
-| `warm-paper` | 暖白、墨色、纸张感 | 写作、阅读、内容创作 |
-| `cyber-lobster` | 深海蓝、珊瑚红、青色 | 展示、录屏、个性化桌面 |
+| 分类 | 主题 | 风格 | 适合场景 |
+|---|---|---|---|
+| 基础 | `focus-night` | 深色、青蓝、低干扰 | 长时间专注工作 |
+| 基础 | `warm-paper` | 暖白、墨色、纸张感 | 写作、阅读、内容创作 |
+| 基础 | `cyber-lobster` | 深海蓝、珊瑚红、青色 | 展示、录屏、个性化桌面 |
+| 明星氛围 | `stage-aurora` | 极光紫、舞台青、聚光感 | 舞台感、高能应援氛围 |
+| 明星氛围 | `rose-glam` | 勃艮第红、玫瑰粉、香槟金 | 红毯、时尚、华丽感 |
+| 明星氛围 | `silver-idol` | 银白、淡薰衣草紫、冰蓝 | 清透、轻盈、偶像舞台感 |
+| 原创二次元 | `sakura-dream` | 樱粉、奶白、梦幻紫 | 治愈、轻小说、少女感 |
+| 原创二次元 | `mecha-core` | 机械灰、燃橙、能量青 | 机甲、科幻、高对比桌面 |
+| 原创二次元 | `magical-night` | 星空蓝、魔法紫、星光金 | 幻想、夜间创作、沉浸感 |
+| 原创二次元 | `pixel-campus` | 天空蓝、像素黄、校园白 | 轻快、游戏化、青春感 |
 
 ### 检查环境
 
@@ -83,7 +90,8 @@ Codex 会复制现有主题、调整 CSS、增加版本号、打包主题并执�
 - 页面升级可能改变 DOM。每次 WorkBuddy 大版本更新后都要重新跑 `probe`、`apply`、`verify`、`restore`。
 - 当前正式验证环境为 macOS WorkBuddy 5.2.6。
 - Windows 启动入口已经存在，但还没有完成本项目的 Windows 实机验证，因此只标记为实验性支持。
-- 不要把明星图片、品牌素材或私人参考图直接打进公开主题包，除非已确认授权。
+- 公开主题只表达原创审美氛围，不使用真实明星姓名、肖像、声纹、粉丝标识，也不使用现成动漫名称、角色、Logo、截图或官方素材。
+- 个人定制只可使用用户自有或已获授权的素材，默认不打包到公开仓库。
 
 ## ⑤ 案例展示
 
@@ -99,6 +107,20 @@ Codex：检查安装和 DOM，应用 focus-night，验证侧边栏、工作区�
 ```text
 用户：主色用 #FF6B35，背景偏暖，卡片更轻，其他功能不要动。
 Codex：复制 warm-paper，生成新 ID，调整变量，打包、检查、应用、截图验证。
+```
+
+### 明星舞台氛围
+
+```text
+用户：做成紫青极光的舞台感，不用任何真人图片或应援标识。
+Codex：应用 stage-aurora，验证功能区可用并截图。
+```
+
+### 原创二次元氛围
+
+```text
+用户：想要机甲感的 WorkBuddy，但不要复刻任何已有动漫 IP。
+Codex：应用 mecha-core，验证主界面、任务页和输入框后输出截图。
 ```
 
 配色预览只是主题方向示意，最终效果以 WorkBuddy 实机截图验证为准。
@@ -124,7 +146,7 @@ npm run inspect
 本仓库在上游能力之上新增了：
 
 - 面向 Codex 等 Agent 的 WorkBuddy 专用 Skill 工作流。
-- `focus-night`、`warm-paper`、`cyber-lobster` 三套主题设计与 CSS。
+- `focus-night`、`warm-paper`、`cyber-lobster` 等十套原创主题设计与 CSS。
 - 主题打包、应用、验证、截图和恢复的统一入口脚本。
 - WorkBuddy 5.2.6 macOS 实机适配、视觉迭代和中文使用文档。
 

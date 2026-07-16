@@ -50,9 +50,9 @@ node scripts/workbuddy-theme.mjs apply focus-night
 
 当前内置：
 
-- `focus-night`：低干扰深色专注主题。
-- `warm-paper`：暖纸张与墨色主题。
-- `cyber-lobster`：珊瑚红与青色的赛博主题。
+- 基础：`focus-night`、`warm-paper`、`cyber-lobster`。
+- 明星舞台氛围：`stage-aurora`、`rose-glam`、`silver-idol`。
+- 原创二次元氛围：`sakura-dream`、`mecha-core`、`magical-night`、`pixel-campus`。
 
 需要持续覆盖页面重载时才增加 `--watch`。该命令会保持前台运行。
 
@@ -71,6 +71,8 @@ node scripts/workbuddy-theme.mjs inspect <id>
 ```
 
 如果需要配图，只使用用户提供或已确认授权的本地图片。不要上传私人参考图到未获批准的服务。
+
+公开发布的明星氛围主题不得使用真实明星姓名、肖像、声纹、粉丝标识或隐性指向性素材。原创二次元主题不得使用现成动漫名称、角色、Logo、截图或官方素材。只在用户明确确认拥有素材权利时进行私人定制，并默认不对外发布。
 
 ### Phase 5：验证并截图
 
@@ -122,7 +124,7 @@ node scripts/workbuddy-theme.mjs verify focus-night --screenshot /absolute/focus
 
 保留并说明上游来源：底层 CDP 注入机制、WorkBuddy 适配器和 `.codedrobe-theme` 格式来自 [CodeDrobe Core](https://github.com/CodeDrobe/core)，原作者为 [Alone88（@anhao）](https://github.com/anhao)，上游使用 Apache-2.0 协议。
 
-将本仓库描述为 CodeDrobe 的 WorkBuddy 场景扩展，不宣称重新发明其运行时。对外发布定制主题或衍生版本时，继续保留上游作者、仓库和许可证信息。将本仓库新增内容限定为 WorkBuddy 专用 Skill、三套主题、入口脚本、中文文档和实机验证流程。
+将本仓库描述为 CodeDrobe 的 WorkBuddy 场景扩展，不宣称重新发明其运行时。对外发布定制主题或衍生版本时，继续保留上游作者、仓库和许可证信息。将本仓库新增内容限定为 WorkBuddy 专用 Skill、十套原创主题、入口脚本、中文文档和实机验证流程。
 
 ## 反馈 & 帮助迭代
 

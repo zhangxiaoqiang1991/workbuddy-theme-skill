@@ -7,6 +7,18 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const THEMES_DIR = path.join(ROOT, "themes");
+const EXPECTED_THEME_IDS = [
+  "cyber-lobster",
+  "focus-night",
+  "magical-night",
+  "mecha-core",
+  "pixel-campus",
+  "rose-glam",
+  "sakura-dream",
+  "silver-idol",
+  "stage-aurora",
+  "warm-paper",
+];
 
 function themeDirectories() {
   return fs.readdirSync(THEMES_DIR, { withFileTypes: true })
@@ -15,8 +27,8 @@ function themeDirectories() {
     .sort();
 }
 
-test("ships three WorkBuddy themes", () => {
-  assert.deepEqual(themeDirectories(), ["cyber-lobster", "focus-night", "warm-paper"]);
+test("ships ten WorkBuddy themes", () => {
+  assert.deepEqual(themeDirectories(), EXPECTED_THEME_IDS);
 });
 
 for (const directory of themeDirectories()) {
