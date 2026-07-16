@@ -1,133 +1,90 @@
-# WorkBuddy Theme Skill
+# WorkBuddy Skin
 
-用 Codex 一句话，为腾讯 WorkBuddy 生成、应用和恢复定制皮肤。
+在腾讯 WorkBuddy 里一句话安装、换肤，也可以上传明星或二次元参考图，自动提取配色和视觉要素、联网补充公开风格资料，最终生成一套私有 Skin。
 
-> 上游说明：本项目是 [CodeDrobe Core](https://github.com/CodeDrobe/core) 的 WorkBuddy 场景扩展。感谢原作者 [Alone88（@anhao）](https://github.com/anhao) 开源底层运行时与适配器。详细原创边界与新增内容见文末“致谢与原创说明”。
+> 上游说明：本项目是 [CodeDrobe Core](https://github.com/CodeDrobe/core) 的 WorkBuddy Skin 场景扩展。感谢原作者 [Alone88（@anhao）](https://github.com/anhao) 开源底层运行时与适配器。详细原创边界见文末。
 
-![十套内置主题配色预览](screenshots/theme-preview.svg)
+## 在 WorkBuddy 里安装
 
-## ① 安装方式
+不需要 Codex。打开 WorkBuddy，把下面这句话直接发给它：
 
-```bash
-npx skills add zhangxiaoqiang1991/workbuddy-theme-skill --global
-```
+> 请下载 `https://github.com/zhangxiaoqiang1991/workbuddy-skin-skill/releases/latest/download/workbuddy-skin-skill.zip`，完成安全检查后安装为 WorkBuddy 用户 Skill。安装完成后告诉我版本和安装路径。
 
-安装后可以直接对 Codex 说：
+如果当前 WorkBuddy 版本不允许对话直接安装 GitHub 包：
 
-> 给 WorkBuddy 换成深色专注主题，完成后截图验证。
+1. 从 [GitHub Releases](https://github.com/zhangxiaoqiang1991/workbuddy-skin-skill/releases/latest) 下载 `workbuddy-skin-skill.zip`。
+2. 打开 WorkBuddy 左侧「专家·技能·连接器」，在技能管理中选择「上传 / 导入技能包」。
+3. 选择下载的 ZIP，启用 `WorkBuddy Skin`。
 
-要求：
+WorkBuddy 官方也支持从左侧 Skill Marketplace 搜索、安装和管理 Skill，参见 [WorkBuddy Skill Marketplace 文档](https://www.workbuddy.ai/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)。
 
-- Node.js 22.4 或更高版本。
-- macOS 12 或更高版本。
-- 腾讯 WorkBuddy 桌面版。
+安装后可以直接说：
 
-本 Skill 推荐由 Codex 调用。兼容 Agent Skills 目录规范的其他工具也可以读取它，但皮肤目标仅为 WorkBuddy，不会修改 CodeBuddy、Trae 或其他应用。
+> 给我的 WorkBuddy 换成 Sakura Dream Skin，完成后截图验证。
 
-## ② 底层逻辑
+> 用我上传的照片做一套私有 WorkBuddy Skin。明星名是 XX，联网参考公开舞台风格，但不要下载第三方照片。
 
-> 皮肤应该是可验证、可恢复的数据包，不应该修改官方客户端。
+> 恢复 WorkBuddy 原生界面。
 
-项目固定调用 `@codedrobe/core@0.2.0`，通过仅绑定本机的 Chromium DevTools Protocol 注入 CSS。它不会修改 WorkBuddy 的 `app.asar`、签名、账号、任务和用户文件。
+## 10 套内置 Skin 实机截图
 
-主题包只允许声明式配置、CSS 和可选本地图片。外部 CSS 资源、主题 JavaScript 和追踪像素会被拒绝。
+以下全部来自 macOS WorkBuddy 5.2.6 实机，截图只保留主工作区，不包含用户姓名和任务列表。
 
-## ③ 具体怎么做
+<table>
+  <tr>
+    <td width="50%"><img src="screenshots/skins/focus-night.jpg" alt="Focus Night WorkBuddy Skin 实机截图"><br><code>focus-night</code> · 低干扰深色专注</td>
+    <td width="50%"><img src="screenshots/skins/warm-paper.jpg" alt="Warm Paper WorkBuddy Skin 实机截图"><br><code>warm-paper</code> · 暖纸张与墨色</td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/skins/cyber-lobster.jpg" alt="Cyber Lobster WorkBuddy Skin 实机截图"><br><code>cyber-lobster</code> · 珊瑚红与赛博青</td>
+    <td><img src="screenshots/skins/stage-aurora.jpg" alt="Stage Aurora WorkBuddy Skin 实机截图"><br><code>stage-aurora</code> · 极光舞台感</td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/skins/rose-glam.jpg" alt="Rose Glam WorkBuddy Skin 实机截图"><br><code>rose-glam</code> · 玫瑰红毯与香槟金</td>
+    <td><img src="screenshots/skins/silver-idol.jpg" alt="Silver Idol WorkBuddy Skin 实机截图"><br><code>silver-idol</code> · 银白、淡紫与冰蓝</td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/skins/sakura-dream.jpg" alt="Sakura Dream WorkBuddy Skin 实机截图"><br><code>sakura-dream</code> · 樱粉治愈幻想</td>
+    <td><img src="screenshots/skins/mecha-core.jpg" alt="Mecha Core WorkBuddy Skin 实机截图"><br><code>mecha-core</code> · 机械灰与能量橙</td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/skins/magical-night.jpg" alt="Magical Night WorkBuddy Skin 实机截图"><br><code>magical-night</code> · 星空魔法幻想</td>
+    <td><img src="screenshots/skins/pixel-campus.jpg" alt="Pixel Campus WorkBuddy Skin 实机截图"><br><code>pixel-campus</code> · 像素校园与天空蓝</td>
+  </tr>
+</table>
 
-### 直接使用内置主题
+![十套 WorkBuddy Skin 配色总览](screenshots/skin-palette-preview.svg)
 
-```bash
-node scripts/workbuddy-theme.mjs list
-node scripts/workbuddy-theme.mjs apply focus-night
-```
+## 上传图片后会做什么
 
-十套内置主题：
+WorkBuddy 会自动完成：
 
-| 分类 | 主题 | 风格 | 适合场景 |
-|---|---|---|---|
-| 基础 | `focus-night` | 深色、青蓝、低干扰 | 长时间专注工作 |
-| 基础 | `warm-paper` | 暖白、墨色、纸张感 | 写作、阅读、内容创作 |
-| 基础 | `cyber-lobster` | 深海蓝、珊瑚红、青色 | 展示、录屏、个性化桌面 |
-| 明星氛围 | `stage-aurora` | 极光紫、舞台青、聚光感 | 舞台感、高能应援氛围 |
-| 明星氛围 | `rose-glam` | 勃艮第红、玫瑰粉、香槟金 | 红毯、时尚、华丽感 |
-| 明星氛围 | `silver-idol` | 银白、淡薰衣草紫、冰蓝 | 清透、轻盈、偶像舞台感 |
-| 原创二次元 | `sakura-dream` | 樱粉、奶白、梦幻紫 | 治愈、轻小说、少女感 |
-| 原创二次元 | `mecha-core` | 机械灰、燃橙、能量青 | 机甲、科幻、高对比桌面 |
-| 原创二次元 | `magical-night` | 星空蓝、魔法紫、星光金 | 幻想、夜间创作、沉浸感 |
-| 原创二次元 | `pixel-campus` | 天空蓝、像素黄、校园白 | 轻快、游戏化、青春感 |
+1. 本地读取上传图片，提取主色、辅助色、光线、材质、构图和抽象视觉母题。
+2. 如果用户提供明星姓名或作品线索，联网搜索官方工作室、公开活动页和品牌发布页，补充风格参考。
+3. 从 10 套内置 Skin 选择最近的骨架，生成新的配色、背景、面板、按钮和输入框样式。
+4. 打包、安全检查、应用、截图验证；失败时恢复原生界面。
 
-### 检查环境
+它不会根据人脸反推人物身份，也不会把用户照片上传到搜索引擎做反向搜图。如需搜索某位明星，需要同时提供姓名或文字线索。
 
-```bash
-node scripts/workbuddy-theme.mjs doctor
-```
+## 私有与公开边界
 
-### 验证并截图
+- 上传照片生成的 Skin 默认只保存在本机 `local-themes/` 和 `local-dist/`，这两个目录不进入 Git。
+- 公开 Skin 只表达原创审美氛围，不默认包含真实明星肖像、声纹、粉丝标识、官方 Logo，也不包含现成动漫角色、截图和官方素材。
+- 用户要求分享或发布带图 Skin 时，需先确认拥有素材权利；否则自动降级为不含照片的原创配色版。
 
-```bash
-node scripts/workbuddy-theme.mjs verify focus-night \
-  --screenshot /absolute/workbuddy-theme.png
-```
+## 底层逻辑
 
-### 恢复原生界面
+项目固定调用 `@codedrobe/core@0.2.0`，通过只绑定本机的 Chromium DevTools Protocol 注入 CSS。不修改 WorkBuddy 的 `app.asar`、签名、账号、任务和用户文件。
 
-```bash
-node scripts/workbuddy-theme.mjs restore
-```
+底层包仍使用 CodeDrobe 上游定义的 `.codedrobe-theme` 技术格式；这是兼容性约束，不是对外产品名。对外统一使用 **WorkBuddy Skin**。
 
-### 用 AI 定制新主题
-
-对 Codex 说：
-
-> 参考这张图片，为 WorkBuddy 做一套奶油橙主题。保留全部功能，完成后截图验证。
-
-Codex 会复制现有主题、调整 CSS、增加版本号、打包主题并执行验证。主题源码在 `themes/`，可分享文件生成在 `dist/`。
-
-## ④ 注意事项
-
-- 不要修改 WorkBuddy 安装包或 `app.asar`。
-- WorkBuddy 已经运行但未开放 CDP 时，工具不会擅自重启。只有明确传入 `--restart-existing` 才会重启。
-- 页面升级可能改变 DOM。每次 WorkBuddy 大版本更新后都要重新跑 `probe`、`apply`、`verify`、`restore`。
-- 当前正式验证环境为 macOS WorkBuddy 5.2.6。
-- Windows 启动入口已经存在，但还没有完成本项目的 Windows 实机验证，因此只标记为实验性支持。
-- 公开主题只表达原创审美氛围，不使用真实明星姓名、肖像、声纹、粉丝标识，也不使用现成动漫名称、角色、Logo、截图或官方素材。
-- 个人定制只可使用用户自有或已获授权的素材，默认不打包到公开仓库。
-
-## ⑤ 案例展示
-
-### 深色专注主题
-
-```text
-用户：把 WorkBuddy 改成深色专注风格，保留所有按钮。
-Codex：检查安装和 DOM，应用 focus-night，验证侧边栏、工作区和输入框，输出截图。
-```
-
-### 品牌配色主题
-
-```text
-用户：主色用 #FF6B35，背景偏暖，卡片更轻，其他功能不要动。
-Codex：复制 warm-paper，生成新 ID，调整变量，打包、检查、应用、截图验证。
-```
-
-### 明星舞台氛围
-
-```text
-用户：做成紫青极光的舞台感，不用任何真人图片或应援标识。
-Codex：应用 stage-aurora，验证功能区可用并截图。
-```
-
-### 原创二次元氛围
-
-```text
-用户：想要机甲感的 WorkBuddy，但不要复刻任何已有动漫 IP。
-Codex：应用 mecha-core，验证主界面、任务页和输入框后输出截图。
-```
-
-配色预览只是主题方向示意，最终效果以 WorkBuddy 实机截图验证为准。
+第一次换肤时，如果当前 WorkBuddy 没有开放本机 CDP，Skill 会先说明并请求一次重启授权，不会擅自关闭当前 WorkBuddy。
 
 ## 开发与验证
 
 ```bash
+node scripts/workbuddy-skin.mjs list
+node scripts/workbuddy-skin.mjs scaffold my-private-skin --from stage-aurora --art /absolute/image.jpg
 npm test
 npm run pack
 npm run inspect
@@ -141,20 +98,21 @@ npm run inspect
 
 这个项目不是从零发明 WorkBuddy 换肤底层，也不把上游能力改名后当成自己的原创。
 
-特别感谢 [CodeDrobe](https://github.com/CodeDrobe) 项目及原作者 [Alone88（@anhao）](https://github.com/anhao)。本项目使用的 CDP 注入机制、跨应用运行时、WorkBuddy 适配器和 `.codedrobe-theme` 主题包规范，来自其开源项目 [CodeDrobe Core](https://github.com/CodeDrobe/core)，上游采用 Apache-2.0 协议。
+特别感谢 [CodeDrobe](https://github.com/CodeDrobe) 项目及原作者 [Alone88（@anhao）](https://github.com/anhao)。本项目使用的 CDP 注入机制、跨应用运行时、WorkBuddy 适配器和 `.codedrobe-theme` 包规范，来自其开源项目 [CodeDrobe Core](https://github.com/CodeDrobe/core)，上游采用 Apache-2.0 协议。
 
 本仓库在上游能力之上新增了：
 
-- 面向 Codex 等 Agent 的 WorkBuddy 专用 Skill 工作流。
-- `focus-night`、`warm-paper`、`cyber-lobster` 等十套原创主题设计与 CSS。
-- 主题打包、应用、验证、截图和恢复的统一入口脚本。
-- WorkBuddy 5.2.6 macOS 实机适配、视觉迭代和中文使用文档。
+- WorkBuddy 内直接安装与运行的 Skin Skill 工作流。
+- 10 套原创 Skin 设计与 CSS。
+- 上传图片的视觉提取、联网研究、私有打包和权利分级流程。
+- Skin 打包、应用、验证、脱敏截图和恢复的统一入口。
+- WorkBuddy 5.2.6 macOS 实机适配、视觉迭代和中文文档。
 
-本项目与 CodeDrobe 是“上游运行时 + WorkBuddy 场景扩展”的关系。二次发布或改造时，请继续保留 CodeDrobe、Alone88、上游仓库和 Apache-2.0 协议信息。
+本项目与 CodeDrobe 是“上游运行时 + WorkBuddy Skin 场景扩展”的关系。二次发布或改造时，请继续保留 CodeDrobe、Alone88、上游仓库和 Apache-2.0 协议信息。
 
 ## 反馈 & 帮助迭代
 
-欢迎在 [Issues](https://github.com/zhangxiaoqiang1991/workbuddy-theme-skill/issues) 页面提交反馈，或直接联系作者。
+欢迎在 [Issues](https://github.com/zhangxiaoqiang1991/workbuddy-skin-skill/issues) 页面提交反馈，或直接联系作者。
 
 ## 关于我
 

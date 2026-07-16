@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="860" viewBox="0 0 1600 860" role="img" aria-labelledby="title desc">
-  <title id="title">WorkBuddy Theme Skill 十套主题配色预览</title>
-  <desc id="desc">三套基础主题、三套明星舞台氛围主题和四套原创二次元氛围主题的抽象界面配色预览。</desc>
+  <title id="title">WorkBuddy Skin Skill 十套 Skin 配色预览</title>
+  <desc id="desc">三套基础 Skin、三套明星舞台氛围 Skin 和四套原创二次元氛围 Skin 的抽象界面配色预览。</desc>
   <defs>
     <linearGradient id="page" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0" stop-color="#f5f3f8"/>
@@ -29,12 +29,12 @@
   </defs>
 
   <rect width="1600" height="860" fill="url(#page)"/>
-  <text x="70" y="66" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="42" font-weight="750" fill="#172033">WorkBuddy Theme Skill</text>
-  <text x="70" y="107" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" fill="#657086">十套内置主题 · 原创配色 · 可验证 · 可恢复</text>
+  <text x="70" y="66" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="42" font-weight="750" fill="#172033">WorkBuddy Skin Skill</text>
+  <text x="70" y="107" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" fill="#657086">十套内置 Skin · 原创配色 · 可验证 · 可恢复</text>
   <rect x="1255" y="49" width="275" height="48" rx="24" fill="#ffffff" fill-opacity=".7" stroke="#ccd3e0"/>
   <text x="1392.5" y="80" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="650" fill="#49556c">3 基础 + 3 明星氛围 + 4 二次元</text>
 
-  <!-- 第一行：基础主题 + 明星氛围 -->
+  <!-- 第一行：基础 Skin + 明星氛围 -->
   <g transform="translate(70 150)" filter="url(#shadow)">
     <rect width="270" height="292" rx="24" fill="#090d13"/>
     <rect x="14" y="14" width="66" height="188" rx="14" fill="#111823"/>
@@ -164,5 +164,5 @@
     <text x="20" y="267" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="14" fill="#668094">像素校园与天空蓝</text>
   </g>
 
-  <text x="800" y="824" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="14" fill="#7b8496">主题均为原创配色，不含真实明星肖像或现成动漫 IP 素材</text>
+  <text x="800" y="824" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="14" fill="#7b8496">Skin 均为原创配色，不含真实明星肖像或现成动漫 IP 素材</text>
 </svg>

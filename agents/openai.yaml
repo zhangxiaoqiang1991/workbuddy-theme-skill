@@ -1,4 +1,4 @@
 interface:
-  display_name: "WorkBuddy Theme"
-  short_description: "用 AI 生成、应用和恢复 WorkBuddy 定制皮肤"
-  default_prompt: "使用 $workbuddy-theme-skill 给 WorkBuddy 应用一套可恢复的专属主题。"
+  display_name: "WorkBuddy Skin"
+  short_description: "在 WorkBuddy 中根据描述或上传图片生成专属 Skin"
+  default_prompt: "使用 $workbuddy-skin-skill 根据我上传的图片生成、应用并验证一套私有 WorkBuddy Skin。"

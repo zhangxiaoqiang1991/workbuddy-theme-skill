@@ -3,6 +3,8 @@
 node_modules/
 skills-lock.json
 *.log
+/local-themes/
+/local-dist/
 screenshots/*.png
 screenshots/*.jpg
 screenshots/*.jpeg

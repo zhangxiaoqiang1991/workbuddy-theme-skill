@@ -1,10 +1,10 @@
-# WorkBuddy 主题契约
+# WorkBuddy Skin 契约
 
-创建或修改主题时读取本文件。运行时固定使用 `@codedrobe/core@0.2.0` 和 `.codedrobe-theme` schema 1。
+创建或修改 Skin 时读取本文件。运行时固定使用 `@codedrobe/core@0.2.0` 和上游 `.codedrobe-theme` schema 1。
 
 ## 目录与清单
 
-每套主题放在 `themes/<id>/`：
+每套内置 Skin 放在 `themes/<id>/`；用户图片定制 Skin 放在已忽略版本控制的 `local-themes/<id>/`。
 
 ```text
 themes/<id>/
@@ -42,20 +42,20 @@ WorkBuddy 5.2.6 macOS 已验证以下地标：
 - 工作区：`.teams-main-content`、`.main-content`、`.chat-container`
 - 输入框：`[role='textbox'][contenteditable='true']`、`.wb-home-composer [contenteditable='true']`
 
-优先使用这些地标。把页面功能特有的选择器放进主题清单的 `verification`，不要塞进通用运行时。
+优先使用这些地标。把页面功能特有的选择器放进 Skin 清单的 `verification`，不要塞进通用运行时。
 
 ## CSS 约束
 
 1. 将每个选择器限制在 `html.codedrobe-host-workbuddy` 下。
-2. 使用少量主题变量控制背景、面板、边框、文字、弱文字和强调色。
+2. 使用少量 Skin 变量控制背景、面板、边框、文字、弱文字和强调色。
 3. 保留真实控件。不要使用整窗截图覆盖原生界面。
 4. 装饰伪元素使用 `pointer-events: none`，并放在真实控件下方。
 5. 不使用 `@import`、远程 `url(...)`、远程字体或可执行内容。
 6. 不依赖中文或英文文案属性选择器。
 7. 不依赖 `:nth-child`、深层 `>` 链或构建产物生成的哈希类名。
-8. 不在主题包中写入账号、任务、路径、API Key 和用户数据。
-9. 公开明星氛围主题只表达原创色彩与舞台氛围，不使用真实姓名、肖像、声纹、粉丝标识或隐性指向性素材。
-10. 公开二次元主题必须是原创审美，不使用现成动漫名称、角色、Logo、截图或官方素材。
+8. 不在 Skin 包中写入账号、任务、路径、API Key 和用户数据。
+9. 公开明星氛围 Skin 只表达原创色彩与舞台氛围，不使用真实姓名、肖像、声纹、粉丝标识或隐性指向性素材。
+10. 公开二次元 Skin 必须是原创审美，不使用现成动漫名称、角色、Logo、截图或官方素材。
 
 ## 配图
 
@@ -80,10 +80,10 @@ html.codedrobe-host-workbuddy .teams-main-content {
 ## 版本与验证
 
 - 每次可见变化都增加 `version`。
-- 打包：`node scripts/workbuddy-theme.mjs pack <id>`。
-- 检查：`node scripts/workbuddy-theme.mjs inspect <id>`。
-- 应用：`node scripts/workbuddy-theme.mjs apply <id>`。
-- 验证：`node scripts/workbuddy-theme.mjs verify <id> --screenshot /absolute/theme.png`。
-- 恢复：`node scripts/workbuddy-theme.mjs restore`。
+- 打包：`node scripts/workbuddy-skin.mjs pack <id>`。
+- 检查：`node scripts/workbuddy-skin.mjs inspect <id>`。
+- 应用：`node scripts/workbuddy-skin.mjs apply <id>`。
+- 验证：`node scripts/workbuddy-skin.mjs verify <id> --screenshot /absolute/skin.png`。
+- 恢复：`node scripts/workbuddy-skin.mjs restore`。
 
 如果 WorkBuddy 已使用其他调试端口，在每条运行时命令中传入同一个 `--port`。如果当前进程未启用 CDP，不得静默重启。
